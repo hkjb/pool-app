@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Header from './components/Header'
+import Header from './components/navigation/Header'
 
 export default {
   name: 'App',
@@ -29,12 +29,12 @@ body {
 }
 .container-fluid {
   border-radius: 5px;
-  border: 1px solid #dddddd;
+  border: 4px solid #dddddd;
   background-color: #ffffff;
   margin: 15px;
   width: auto !important;
 }
-h2 {
+h2, h4 {
   text-align: left;
   margin: 15px 0;
 }

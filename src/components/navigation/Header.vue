@@ -4,14 +4,11 @@
       <router-link tag="li" to="/">
         <a>Game Board</a>
       </router-link>
-      <router-link tag="li" to="/statistics">
-        <a>Statistics</a>
-      </router-link>
       <router-link tag="li" to="/players">
         <a>Players</a>
       </router-link>
-      <router-link tag="li" to="/settings">
-        <a>Settings</a>
+      <router-link tag="li" to="/statistics">
+        <a>Statistics</a>
       </router-link>
     </ul>
   </div>
@@ -40,9 +37,7 @@ export default {
   padding: 10px 0;
   font-size: 15px;
 
-  border-width: 0 1px 0 0;
-  border-color: #04522e;
-  border-style: solid;
+  border-right: 1px solid #04522e;
 }
 .header ul li.router-link-exact-active {
   background-image: url('/static/felt.png');

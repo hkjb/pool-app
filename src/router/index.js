@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Settings from '@/components/Settings'
 import GameBoard from '@/components/GameBoard'
 import Statistics from '@/components/Statistics'
+import PlayerAdd from '@/components/players/PlayerAdd'
 import PlayerList from '@/components/players/PlayerList'
 import PlayerInfo from '@/components/players/PlayerInfo'
 
@@ -21,19 +21,19 @@ export default new Router({
       component: Statistics
     },
     {
+      path: '/add',
+      name: 'Add Player',
+      component: PlayerAdd
+    },
+    {
       path: '/players',
-      name: 'Players',
+      name: 'Player List',
       component: PlayerList
     },
     {
       path: '/players/:id',
-      name: 'Players',
+      name: 'Player Info',
       component: PlayerInfo
-    },
-    {
-      path: '/settings',
-      name: 'Settings',
-      component: Settings
     }
   ]
 })
