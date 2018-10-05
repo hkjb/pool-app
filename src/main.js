@@ -4,6 +4,10 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+Vue.filter('firstLetter', function (value) {
+  return value.charAt(0)
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

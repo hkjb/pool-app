@@ -2,33 +2,31 @@
   <div class="container-fluid">
     <PageTitle title="Player List" />
 
-    <ul class="playerList">
-      <table class="table table-striped" v-if="players">
-        <thead>
-          <tr>
-            <td style="width: 60px; text-align: center;">ID</td>
-            <td>Name</td>
-            <td style="width: 75px; text-align: center;">Delete</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="player in players" :key="player.id">
-            <td style="text-align: center; vertical-align: middle;">{{ player.id }}</td>
-            <router-link tag="td" :to='"/players/" + player.id' style="vertical-align: middle;">
-              <a>{{ player.firstName }} {{ player.lastName }}</a>
-            </router-link>
-            <td>
-              <button class="btn btn-danger btn-block" v-on:click="remove(player.id)">
-                <i class="fa fa-times"></i>
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <span v-if="!players">
-        None Found
-      </span>
-    </ul>
+    <table class="table table-striped" v-if="players">
+      <thead>
+        <tr>
+          <td style="width: 60px; text-align: center;">ID</td>
+          <td>Name</td>
+          <td style="width: 75px; text-align: center;">Delete</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="player in players" :key="player.id">
+          <td style="text-align: center; vertical-align: middle;">{{ player.id }}</td>
+          <router-link tag="td" :to='"/players/" + player.id' style="vertical-align: middle;">
+            <a>{{ player.firstName }} {{ player.lastName }}</a>
+          </router-link>
+          <td>
+            <button class="btn btn-danger btn-block" v-on:click="remove(player.id)">
+              <i class="fa fa-times"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <span v-if="!players">
+      None Found
+    </span>
   </div>
 </template>
 

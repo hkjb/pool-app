@@ -83,6 +83,23 @@ export default {
     localStorage.setItem('players', parsed)
     router.go('/')
   },
+  processGame (winner, loser) {
+    this.players = localStorage.getItem('players')
+    if (this.players) {
+      var players = JSON.parse(this.players)
+      for (var p = 0; p < players.length; p++) {
+        if (winner === players[p].id) {
+          players[p].wins = (players[p].wins + 1)
+        }
+        if (loser === players[p].id) {
+          players[p].losses = (players[p].losses - 1)
+        }
+      }
+    }
+    const parsed = JSON.stringify(players)
+    localStorage.setItem('players', parsed)
+    router.go('/')
+  },
   players: [],
   newPlayer: {
     id: 0,
